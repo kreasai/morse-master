@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Morse Master</title>
     <meta name="description" content="Game edukasi seru untuk belajar Sandi Morse Pramuka dengan visual dan suara interaktif!" />
+    <script>
+      if (window.self === window.top) {
+        document.body.innerHTML = "<h2 style='text-align:center; margin-top:50px; font-family:sans-serif;'>Mengarahkan ke Kreasai.com...</h2>";
+        window.location.replace("https://kreasai.com"); 
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
