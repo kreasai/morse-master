@@ -1,0 +1,4 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "frame-ancestors 'self' https://kreasai.com https://www.kreasai.com https://*.google.com https://*.run.app https://ai.studio;"

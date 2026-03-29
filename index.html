@@ -1,16 +1,20 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      // Cek apakah diakses langsung (bukan iframe) dan bukan dari AI Studio
+      var isAllowed = window.location.hostname.includes('run.app') || window.location.hostname.includes('google') || window.location.hostname.includes('ai.studio') || window.location.hostname === 'localhost';
+      if (window.self === window.top && !isAllowed) {
+        // Hentikan proses render halaman sesegera mungkin (escape slash untuk mencegah error parsing HTML)
+        document.documentElement.innerHTML = "<head><title>Redirecting...<\\/title><\\/head><body style='background:#111; color:#fff; display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif; margin:0;'><h2>Mengarahkan ke Kreasai.com...<\\/h2><\\/body>";
+        // Paksa redirect dan hapus history
+        window.location.replace("https://kreasai.com"); 
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Morse Master</title>
     <meta name="description" content="Game edukasi seru untuk belajar Sandi Morse Pramuka dengan visual dan suara interaktif!" />
-    <script>
-      if (window.self === window.top) {
-        document.body.innerHTML = "<h2 style='text-align:center; margin-top:50px; font-family:sans-serif;'>Mengarahkan ke Kreasai.com...</h2>";
-        window.location.replace("https://kreasai.com"); 
-      }
-    </script>
   </head>
   <body>
     <div id="root"></div>
